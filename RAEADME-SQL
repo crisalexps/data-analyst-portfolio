@@ -1,0 +1,33 @@
+sales-analysis/
+│
+├── data/
+│   └── raw/
+│       └── sales_data.csv
+│
+├── notebooks/
+│   └── sales_analysis.ipynb
+│
+├── sql/
+│   └── sales_queries.sql
+│
+├── output/
+│
+└── README.md
+# Análisis de Ventas – SQL
+
+## Objetivo
+Analizar datos de ventas para obtener métricas clave del negocio
+como ingresos, ticket promedio, categorías y regiones más rentables.
+
+## Dataset
+Datos simulados de ventas con información de pedidos, productos,
+categorías, precios y regiones.
+
+## Análisis realizado en SQL
+- Ingresos totales
+- Cantidad de órdenes
+- Ventas por categoría
+- Ventas por región
+- Tendencia mensual
+- Productos más rentables
+- Ticket promedio
