@@ -1,10 +1,10 @@
 # Portafolio de Cristina – Data Analyst
 
-## 👋 Sobre mí
+##  Sobre mí
 Soy Data Analyst con experiencia en transformar datos en decisiones estratégicas que impactan en ventas, clientes y operaciones.  
 Me especializo en análisis exploratorio, visualización, modelado predictivo y dashboards interactivos.
 
-## 💻 Habilidades
+##  Habilidades
 - Python: Pandas, NumPy, Matplotlib, Seaborn
 - SQL: consultas avanzadas, joins, agregaciones
 - ETL y limpieza de datos
@@ -12,34 +12,32 @@ Me especializo en análisis exploratorio, visualización, modelado predictivo y 
 - Modelado predictivo: Regresión lineal, clustering
 - Dashboards interactivos (Power BI / Tableau)
 
-## 📂 Proyectos destacados
+##  Proyectos destacados
 
-### 1️⃣ [Sales Analysis](./01_sales_analysis)
+### [Sales Analysis](./01_sales_analysis)
 - Análisis de ventas por producto, categoría y región  
 - Métricas: ingresos totales, ticket promedio, tendencias mensuales  
 - Gráficos: barras por categoría, línea de ventas mensuales
 
-### 2️⃣ [Customer Analysis](./02_customer_analysis)
+### [Customer Analysis](./02_customer_analysis)
 - Segmentación de clientes para campañas personalizadas  
 - Métricas: gasto promedio, frecuencia de compra, perfil de segmentos  
 - Visualización: clusters de clientes, boxplots por segmento
 
-### 3️⃣ [Price Prediction](./03_price_prediction)
+### [Price Prediction](./03_price_prediction)
 - Modelo de predicción de precios de casas con regresión lineal  
 - Métricas: R², RMSE, análisis de variables más influyentes  
 - Visualización: scatter plots precio real vs predicho, coeficientes de variables
 
-### 4️⃣ [SQL Projects](./04_sql_projects)
+###  [SQL Projects](./04_sql_projects)
 - Consultas complejas para reportes de ventas y clientes  
 - JOINs, agregaciones y filtros avanzados  
 - Reportes automatizados de KPIs
 
-### 5️⃣ [Dashboards](./05_dashboards)
+### [Dashboards](./05_dashboards)
 - Dashboards interactivos en Power BI  
 - Ventas por producto, categoría y región  
 - Segmentación y métricas clave de clientes
-
-## 📫 Contacto
+## Contacto
 - LinkedIn: [Cristina Alexandra Pintado](https://www.linkedin.com/in/cristina-alexandra-pintado)
-- Email: tuemail@ejemplo.com
-
+- Email: tuemail@ejemplo.comCRIS201120@GMAIL.COM
