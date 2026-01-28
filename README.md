@@ -39,5 +39,4 @@ Me especializo en análisis exploratorio, visualización, modelado predictivo y 
 - Ventas por producto, categoría y región  
 - Segmentación y métricas clave de clientes
 ## Contacto
-- LinkedIn: [Cristina Alexandra Pintado](https://www.linkedin.com/in/cristina-alexandra-pintado)
 - Email: cris201120@gmail.com
