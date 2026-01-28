@@ -1,0 +1,94 @@
+sales-analysis/
+│
+├── data/
+│   └── raw/
+│       └── sales_data.csv
+│
+├── notebooks/
+│   └── sales_analysis.ipynb
+│
+├── output/
+│
+└── README.md
+
+order_id,date,customer_id,product,category,quantity,price,region
+1001,2023-01-05,C001,Laptop,Electronics,1,1200,North
+1002,2023-01-06,C002,Mouse,Electronics,2,25,South
+1003,2023-01-07,C003,Desk,Furniture,1,300,East
+1004,2023-02-02,C001,Keyboard,Electronics,1,80,North
+1005,2023-02-10,C004,Chair,Furniture,2,150,West
+1006,2023-02-15,C002,Monitor,Electronics,1,400,South
+1007,2023-03-01,C005,Lamp,Home,3,40,East
+1008,2023-03-12,C003,Desk,Furniture,1,300,East
+1009,2023-03-20,C006,Mouse,Electronics,1,25,West
+1010,2023-03-25,C007,Chair,Furniture,1,150,North
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('../data/raw/sales_data.csv')
+df.head()
+df['date'] = pd.to_datetime(df['date'])
+df['total_sales'] = df['quantity'] * df['price']
+
+df['date'] = pd.to_datetime(df['date'])
+df['total_sales'] = df['quantity'] * df['price']
+
+total_revenue = df['total_sales'].sum()
+total_orders = df['order_id'].nunique()
+avg_ticket = total_revenue / total_orders
+
+total_revenue, total_orders, avg_ticket
+##Ventas por categoría
+sales_by_category = (
+    df.groupby('category')['total_sales']
+      .sum()
+      .sort_values(ascending=False)
+)
+
+sales_by_category
+
+sales_by_category.plot(kind='bar', title='Ventas por Categoría')
+plt.ylabel('Ingresos')
+plt.show()
+
+df['month'] = df['date'].dt.to_period('M')
+monthly_sales = df.groupby('month')['total_sales'].sum()
+monthly_sales
+##Gráfico de ventas mensuales
+monthly_sales.plot(marker='o', title='Tendencia Mensual de Ventas')
+plt.ylabel('Ingresos')
+plt.show()
+
+##Análisis de Ventas
+## Objetivo
+Analizar datos de ventas para identificar categorías más rentables
+y tendencias mensuales que ayuden a la toma de decisiones comerciales.
+
+## Dataset
+Datos simulados de ventas con información de productos, categorías,
+regiones, cantidades y precios.
+
+## Herramientas
+- Python
+- Pandas
+- Matplotlib
+
+## Proceso
+- Carga y limpieza de datos
+- Creación de métricas de negocio
+- Análisis por categoría
+- Análisis temporal de ventas
+
+## Resultados principales
+- La categoría **Electronics** genera mayores ingresos
+- Se observa una tendencia de crecimiento en los últimos meses
+- Algunos productos concentran gran parte del ingreso total
+
+## Recomendaciones
+- Priorizar stock de productos más rentables
+- Diseñar campañas en meses de mayor venta
+- Analizar desempeño por región en futuros estudios
+
+
+
