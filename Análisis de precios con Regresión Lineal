@@ -1,0 +1,83 @@
+house-prices-regression/
+│
+├── data/
+│   └── raw/
+│       └── house_prices.csv
+│
+├── notebooks/
+│   └── house_prices_regression.ipynb
+│
+├── output/
+│
+└── README.md
+
+size_m2,bedrooms,price
+50,1,75000
+60,2,90000
+70,2,110000
+80,3,135000
+90,3,160000
+100,3,185000
+120,4,230000
+140,4,275000
+160,5,320000
+180,5,360000
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Cargar datos
+df = pd.read_csv('../data/raw/house_prices.csv')
+
+# Variables
+X = df[['size_m2']]
+y = df['price']
+
+# Modelo
+model = LinearRegression()
+model.fit(X, y)
+
+# Predicción
+df['predicted_price'] = model.predict(X)
+
+# Métricas
+r2 = model.score(X, y)
+
+r2
+plt.figure()
+plt.scatter(df['size_m2'], df['price'])
+plt.plot(df['size_m2'], df['predicted_price'])
+plt.xlabel('Tamaño en m²')
+plt.ylabel('Precio')
+plt.title('Regresión Lineal: Tamaño vs Precio')
+plt.show()
+# Regresión Lineal – Precios de Viviendas
+
+## Objetivo
+Analizar la relación entre el tamaño de una vivienda y su precio
+utilizando un modelo de regresión lineal.
+
+## Dataset
+Datos simulados de viviendas con tamaño en metros cuadrados,
+cantidad de habitaciones y precio final.
+
+## Herramientas
+- Python
+- Pandas
+- Matplotlib
+- Scikit-learn
+
+## Proceso
+- Carga y limpieza de datos
+- Análisis exploratorio
+- Entrenamiento de modelo de regresión lineal
+- Visualización de resultados
+
+## Resultados
+- Existe una relación lineal positiva entre el tamaño y el precio
+- El modelo explica gran parte de la variabilidad del precio (R² alto)
+
+## Conclusión
+El tamaño de la vivienda es un buen predictor del precio,
+aunque podrían incorporarse más variables para mejorar el modelo.
+ [Regresión Lineal – Precios de Viviendas](house-prices-regression/)
