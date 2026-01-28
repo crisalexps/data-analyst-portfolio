@@ -1,0 +1,65 @@
+customer_id,age,gender,region,total_orders,total_spent,last_purchase_date
+C001,34,F,North,5,1800,2023-03-25
+C002,41,M,South,3,550,2023-02-15
+C003,29,F,East,4,900,2023-03-12
+C004,50,M,West,2,300,2023-02-10
+C005,37,F,East,6,720,2023-03-01
+C006,45,M,West,1,25,2023-03-20
+C007,31,F,North,3,450,2023-03-25
+C008,39,M,South,4,1100,2023-03-18
+# Análisis de Clientes
+## Carga y preparación de datos
+import pandas as pd
+
+df = pd.read_csv('../data/raw/customers_data.csv')
+df['last_purchase_date'] = pd.to_datetime(df['last_purchase_date'])
+
+df.head()
+## Métricas generales de clientes
+total_customers = df['customer_id'].nunique()
+avg_spent = df['total_spent'].mean()
+avg_orders = df['total_orders'].mean()
+
+total_customers, avg_spent, avg_orders
+## Segmentación por región
+spending_by_region = (
+    df.groupby('region')['total_spent']
+      .mean()
+      .sort_values(ascending=False)
+)
+
+spending_by_region
+## Clientes con mayor valor
+top_customers = df.sort_values('total_spent', ascending=False).head(5)
+top_customers
+## Relación entre edad y gasto
+df[['age', 'total_spent']].corr()
+# Análisis de Clientes
+
+## Objetivo
+Analizar el comportamiento de los clientes para identificar segmentos
+más valiosos y oportunidades de mejora en la estrategia comercial.
+
+## Dataset
+Datos simulados de clientes con información demográfica,
+comportamiento de compra y gasto total.
+
+## Herramientas
+- Python
+- Pandas
+
+## Proceso
+- Limpieza y preparación de datos
+- Análisis de métricas de clientes
+- Segmentación por región
+- Identificación de clientes de alto valor
+
+## Resultados principales
+- Existen diferencias significativas de gasto entre regiones
+- Un grupo reducido de clientes concentra mayor gasto
+- El número de pedidos influye directamente en el gasto total
+
+## Recomendaciones
+- Fidelizar clientes de alto valor
+- Diseñar campañas específicas por región
+- Incentivar compras recurrentes
