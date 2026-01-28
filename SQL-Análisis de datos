@@ -1,0 +1,111 @@
+DROP TABLE IF EXISTS sales;
+
+CREATE TABLE sales (
+    order_id INTEGER,
+    date DATE,
+    customer_id TEXT,
+    product TEXT,
+    category TEXT,
+    quantity INTEGER,
+    price REAL,
+    region TEXT
+);
+
+
+INSERT INTO sales VALUES
+(1001, '2023-01-05', 'C001', 'Laptop', 'Electronics', 1, 1200, 'North'),
+(1002, '2023-01-06', 'C002', 'Mouse', 'Electronics', 2, 25, 'South'),
+(1003, '2023-01-07', 'C003', 'Desk', 'Furniture', 1, 300, 'East'),
+(1004, '2023-02-02', 'C001', 'Keyboard', 'Electronics', 1, 80, 'North'),
+(1005, '2023-02-10', 'C004', 'Chair', 'Furniture', 2, 150, 'West'),
+(1006, '2023-02-15', 'C002', 'Monitor', 'Electronics', 1, 400, 'South'),
+(1007, '2023-03-01', 'C005', 'Lamp', 'Home', 3, 40, 'East'),
+(1008, '2023-03-12', 'C003', 'Desk', 'Furniture', 1, 300, 'East'),
+(1009, '2023-03-20', 'C006', 'Mouse', 'Electronics', 1, 25, 'West'),
+(1010, '2023-03-25', 'C007', 'Chair', 'Furniture', 1, 150, 'North');
+
+
+SELECT
+    SUM(quantity * price) AS total_revenue
+FROM sales;
+
+SELECT
+    COUNT(DISTINCT order_id) AS total_orders
+FROM sales;
+
+SELECT
+    category,
+    SUM(quantity * price) AS revenue
+FROM sales
+GROUP BY category
+ORDER BY revenue DESC;
+
+SELECT
+    region,
+    SUM(quantity * price) AS revenue
+FROM sales
+GROUP BY region
+ORDER BY revenue DESC;
+
+SELECT
+    strftime('%Y-%m', date) AS month,
+    SUM(quantity * price) AS revenue
+FROM sales
+GROUP BY month
+ORDER BY month;
+
+SELECT
+    product,
+    SUM(quantity * price) AS revenue
+FROM sales
+GROUP BY product
+ORDER BY revenue DESC
+LIMIT 5;
+
+SELECT
+    SUM(quantity * price) / COUNT(DISTINCT order_id) AS avg_ticket
+FROM sales;
+
+sales-analysis/
+│
+├── data/
+│   └── raw/
+│       └── sales_data.csv
+│
+├── notebooks/
+│   └── sales_analysis.ipynb
+│
+├── sql/
+│   └── sales_queries.sql
+│
+├── output/
+│
+└── README.md
+# Análisis de Ventas – SQL
+
+## Objetivo
+Analizar datos de ventas para obtener métricas clave del negocio
+como ingresos, ticket promedio, categorías y regiones más rentables.
+
+## Dataset
+Datos simulados de ventas con información de pedidos, productos,
+categorías, precios y regiones.
+
+## Análisis realizado en SQL
+- Ingresos totales
+- Cantidad de órdenes
+- Ventas por categoría
+- Ventas por región
+- Tendencia mensual
+- Productos más rentables
+- Ticket promedio
+
+
+
+
+
+
+
+
+
+
