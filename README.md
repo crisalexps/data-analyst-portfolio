@@ -40,4 +40,4 @@ Me especializo en análisis exploratorio, visualización, modelado predictivo y 
 - Segmentación y métricas clave de clientes
 ## Contacto
 - LinkedIn: [Cristina Alexandra Pintado](https://www.linkedin.com/in/cristina-alexandra-pintado)
-- Email: tuemail@ejemplo.comCRIS201120@GMAIL.COM
+- Email: cris201120@gmail.com
